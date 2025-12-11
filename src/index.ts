@@ -4,20 +4,6 @@ import { readdirSync, existsSync } from 'fs';
 import { join } from 'path';
 import { Command } from './types/Command';
 
-const envPath = join(__dirname, '../.env');
-if (!existsSync(envPath)) {
-  console.error('❌ ERRO: Arquivo .env não encontrado!');
-  console.error('📝 Crie um arquivo .env na raiz do projeto com as seguintes variáveis:');
-  console.error('');
-  console.error('DISCORD_TOKEN=seu_token_do_discord');
-  console.error('OPENAI_API_KEY=sua_chave_openai');
-  console.error('DISCORD_CLIENT_ID=seu_client_id');
-  console.error('BRAVE_API_KEY=sua_chave_brave_opcional');
-  console.error('');
-  console.error('💡 Consulte SETUP.md para instruções detalhadas.');
-  process.exit(1);
-}
-
 config();
 
 const requiredEnvVars = ['DISCORD_TOKEN', 'OPENAI_API_KEY', 'DISCORD_CLIENT_ID'];
