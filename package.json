@@ -1,0 +1,28 @@
+{
+  "name": "botus",
+  "version": "1.0.0",
+  "description": "Bot Discord para leitura e comparação de bíblias com IA",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "watch": "tsc --watch",
+    "register": "ts-node src/scripts/registerCommands.ts"
+  },
+  "keywords": ["discord", "bot", "bible", "gpt"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "openai": "^4.20.1",
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
+
