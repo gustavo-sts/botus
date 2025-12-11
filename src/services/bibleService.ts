@@ -23,7 +23,6 @@ export class BibleService {
       'nm': 'numbers',
       'deuteronomio': 'deuteronomy',
       'dt': 'deuteronomy',
-      'joao': 'john',
       'jo': 'john',
       'mateus': 'matthew',
       'mt': 'matthew',
