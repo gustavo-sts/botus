@@ -2,6 +2,7 @@ import { Client, GatewayIntentBits, Collection, Events } from 'discord.js';
 import { config } from 'dotenv';
 import { readdirSync, existsSync } from 'fs';
 import { join } from 'path';
+import { createServer } from 'http';
 import { Command } from './types/Command';
 
 config();
@@ -58,4 +59,27 @@ for (const file of eventFiles) {
 }
 
 client.login(process.env.DISCORD_TOKEN);
+
+const port = process.env.PORT || 3000;
+
+if (process.env.PORT || process.env.RENDER) {
+  const server = createServer((req, res) => {
+    if (req.url === '/health' || req.url === '/') {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ 
+        status: 'ok', 
+        bot: client.user?.tag || 'connecting...',
+        uptime: Math.floor(process.uptime()),
+        timestamp: new Date().toISOString()
+      }));
+    } else {
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Not Found' }));
+    }
+  });
+
+  server.listen(port, () => {
+    console.log(`🌐 Servidor HTTP iniciado na porta ${port} (para Render/Railway)`);
+  });
+}
 

@@ -40,7 +40,7 @@ Guia rápido para fazer deploy em diferentes plataformas.
 1. **Crie conta:** https://render.com (login com GitHub)
 
 2. **Crie novo serviço:**
-   - Clique em "New +" > "Background Worker"
+   - Clique em "New +" > **"Web Service"** (gratuito)
    - Conecte seu repositório
 
 3. **Configure:**
@@ -54,11 +54,16 @@ Guia rápido para fazer deploy em diferentes plataformas.
    - Adicione todas as variáveis necessárias
 
 5. **Deploy:**
-   - Clique em "Create Background Worker"
+   - Clique em "Create Web Service"
    - Aguarde o deploy
 
 6. **Registre comandos:**
    - Execute localmente: `pnpm run register`
+
+**⚠️ Nota:** 
+- Use **Web Service** (gratuito), não Background Worker (pago)
+- O bot já inclui servidor HTTP que responde na porta configurada
+- Web Services gratuitos podem suspender após inatividade, mas o bot se reconecta automaticamente
 
 **Pronto!** Seu bot está no ar! 🎉
 

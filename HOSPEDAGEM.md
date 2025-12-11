@@ -37,15 +37,16 @@ Este guia explica como hospedar seu bot Discord em diferentes plataformas.
 ### 2. Render (Gratuito com Limites)
 
 **Vantagens:**
-- Plano gratuito disponível
+- Plano gratuito disponível (Web Service)
 - Deploy automático via GitHub
 - Fácil configuração
+- O bot inclui servidor HTTP para funcionar como Web Service
 
 **Passos:**
 
 1. Acesse https://render.com
 2. Faça login com GitHub
-3. Clique em "New +" > "Web Service"
+3. Clique em "New +" > **"Web Service"** (gratuito)
 4. Conecte seu repositório
 5. Configure:
    - **Name:** botus (ou qualquer nome)
@@ -55,4 +56,8 @@ Este guia explica como hospedar seu bot Discord em diferentes plataformas.
 6. Adicione as variáveis de ambiente na seção "Environment"
 7. Clique em "Create Web Service"
 
-**Importante:** Render suspende serviços gratuitos após 15 minutos de inatividade. Para bots Discord, considere usar um "Background Worker" em vez de "Web Service".
+**⚠️ IMPORTANTE:** 
+- Use **Web Service** (gratuito) - o bot já está configurado com servidor HTTP
+- Background Workers são **PAGOS** no Render
+- Web Services gratuitos podem ser suspensos após 15 minutos de inatividade, mas o bot se reconecta automaticamente quando há tráfego
+- O bot responde em `/health` ou `/` para manter o serviço ativo
