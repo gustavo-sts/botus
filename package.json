@@ -4,7 +4,7 @@
   "description": "Bot Discord para leitura e comparação de bíblias com IA",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc tsc-alias",
+    "build": "tsc && tsc-alias",
     "start": "node dist/index.js",
     "dev": "ts-node src/index.ts",
     "watch": "tsc --watch",
